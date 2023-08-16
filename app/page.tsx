@@ -92,7 +92,6 @@ export default function Home() {
             } else {
                 setFavourites([...favourites.filter((item) => item !== wishlist)]);
             }
-            console.log('wishlist', wishlist);
         };
 
         const addToCart = (cartList) => {
