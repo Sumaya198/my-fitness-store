@@ -1,0 +1,39 @@
+.card {
+    margin: 20px;
+    border: 2px solid #ededed;
+    padding: 40px;
+    cursor: pointer;
+}
+
+.media {
+    width: 13rem;
+    margin-bottom: 1rem;
+}
+
+.cardTitle {
+    margin-bottom: 1rem;
+}
+
+.cardPrice {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sizesContainer {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.inStock {
+    background-color: green;
+}
+
+.not-in-stock {
+    background-color: grey;
+}
+
+.cartImage {
+    width: 150px;
+}
