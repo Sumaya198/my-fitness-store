@@ -32,8 +32,6 @@ export interface Media {
     width?: number;
 }
 
-// navigation props
-
 export interface Navigationprops {
     handleChange: any;
     query: string;

@@ -12,17 +12,16 @@ export default async function productDP({ params }: ProductPageProps) {
             notFound: true,
         };
     }
-    console.log('params', params);
+
     const products = await fetch(
         'https://cdn.develop.gymshark.com/training/mock-product-responses/algolia-example-payload.json',
     ).then((res) => res.json());
-    console.log('product', products);
     const productData = products.hits;
-    const filterHandle = productData.find(({ handle }) => handle === params.handle);
-    console.log('filtered', filterHandle);
+    const item = productData.find(({ handle }) => handle === params.handle);
+
     return (
         <div>
-            <PDP filterHandle={filterHandle} />
+            <PDP item={item} />
         </div>
     );
 }

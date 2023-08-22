@@ -2,15 +2,14 @@ import React from 'react';
 
 import styles from './info.module.css';
 
-export const ProductInfo = ({ filterHandle }) => {
-    const data = filterHandle.description;
+export const ProductInfo = ({ item }) => {
     return (
         <div className={styles.info}>
             <div className={styles['infos__container']}>
-                <h1 className={styles['info__name']}>{filterHandle.title}</h1>
-                <h3 className={styles['info__price']}>£{filterHandle.price}</h3>
+                <h1 className={styles['info__name']}>{item.title}</h1>
+                <h3 className={styles['info__price']}>£{item.price}</h3>
                 <div className={styles.sizesContainer}>
-                    {filterHandle.availableSizes.map((size) => (
+                    {item.availableSizes.map((size) => (
                         <div
                             className={size.inStock ? `${styles['inStock']}` : `${styles['not-in-stock']}`}
                             key={size.id}
@@ -19,7 +18,8 @@ export const ProductInfo = ({ filterHandle }) => {
                         </div>
                     ))}
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: filterHandle.description }}></p>
+
+                <p className={styles.description} dangerouslySetInnerHTML={{ __html: item.description }}></p>
             </div>
         </div>
     );

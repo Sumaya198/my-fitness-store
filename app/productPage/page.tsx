@@ -8,6 +8,7 @@ import { Products } from '../components/Products/products';
 import { Sidebar } from '../components/Sidebar/sidebar';
 import { Card } from '../components/Card/card';
 import { MiniPageBanner } from '../components/miniPageBanner/mini-page-banner';
+import Loading from '../components/loading/loading';
 
 export default function ProductPage() {
     const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +51,6 @@ export default function ProductPage() {
     // Radio Filters colour
 
     const handleChangeRadio = (event) => {
-        console.log('name', event.target.getAttribute('name'), 'colourFilter');
         setSelectedCategory({
             filterType: event.target.getAttribute('name'),
             filterValue: event.target.value,
@@ -58,7 +58,6 @@ export default function ProductPage() {
     };
 
     const handleChangePriceRadio = (event) => {
-        console.log('second', event.target.getAttribute('name'), 'typeFilter');
         setSelectedCategory({
             filterType: event.target.getAttribute('name'),
             filterValue: event.target.value,
@@ -66,7 +65,6 @@ export default function ProductPage() {
     };
 
     const handleChangeSizeRadio = (event) => {
-        console.log('second', event.target.getAttribute('name'), 'sizeFilter');
         setSelectedCategory({
             filterType: event.target.getAttribute('name'),
             filterValue: event.target.value,
@@ -74,8 +72,6 @@ export default function ProductPage() {
     };
 
     function filteredData(data, selected, query) {
-        const size = data.avaiableSizes?.map((i) => i.size);
-
         let filteredProducts = data;
         //Filtering Input Items
         if (query) {
@@ -88,13 +84,6 @@ export default function ProductPage() {
         }
 
         // filter for colour
-
-        ///Think about this function!!!!
-        // const sizes = data.availabeSizes.map((size) => size.size);
-
-        const tt = filteredProducts.map((t) => {
-            t.availabeSizes;
-        });
 
         if (selected.filterType === 'sizeFilter') {
             filteredProducts = filteredProducts.filter(({ sizeInStock }) =>
@@ -150,7 +139,7 @@ export default function ProductPage() {
     }
 
     const results = filteredData(data, selectedCategory, query);
-    if (isLoading) return <p>Loading....</p>;
+    if (isLoading) return <Loading />;
     return (
         <div>
             <Navigation query={query} handleChange={handleChange} />

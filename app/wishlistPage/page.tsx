@@ -15,13 +15,20 @@ export default function WishlistPage() {
             <div>
                 <Link href="/productPage">Back to Home</Link>
             </div>
-            {wishlist.map((item) => (
-                <div key={item.objectID}>
-                    <h2>{item.title}</h2>
-                    <img className={styles.cartImage} src={item.featuredMedia.src} />
-                    <p>£{item.price}</p>
-                </div>
-            ))}
+            <div className={styles.wishlistContainer}>
+                {wishlist.map((item) => (
+                    <section key={item.objectID} className={styles.wishlistCard}>
+                        <div className={styles.imgContainer}>
+                            <img className={styles.media} src={item.featuredMedia.src} />
+                        </div>
+                        <h2 className={styles.cardTitle}>{item.title}</h2>
+                        <section className={styles.cardPrice}>
+                            <p>£{item.price}</p>
+                        </section>
+                        <button>View Product</button>
+                    </section>
+                ))}
+            </div>
         </>
     );
 }

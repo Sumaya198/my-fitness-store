@@ -11,11 +11,8 @@ export const Homepage = () => {
                     <img src="https://images.pexels.com/photos/3822220/pexels-photo-3822220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
                 </div>
                 <div className={styles.banner}>
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus ipsam consequuntur
-                        praesentium iste sed eligendi aut.
-                    </p>
+                    <h1>Did someone say leggings!</h1>
+
                     <Link href="/productPage">
                         <button className={styles.link}>Shop Now</button>
                     </Link>

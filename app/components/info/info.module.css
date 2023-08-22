@@ -2,31 +2,32 @@
     color: #666;
     background: #fff;
 }
-@media (max-width: 840px) {
-    .info {
-        padding-top: 1rem;
-    }
+
+.infos__container {
+    text-align: center;
 }
-@media (max-width: 460px) {
-    .info {
-        max-width: 340px;
-    }
-}
+
 .info__name {
     font-size: 35px;
-    font-weight: 500;
+    font-family: 'Montserrat';
     text-transform: uppercase;
 }
+
 .info__price {
     color: #073f32;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .sizesContainer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 6px;
-    padding: 8px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .inStock {
@@ -34,17 +35,16 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: green;
+    color: rgb(72, 130, 72);
     border-radius: 0.2rem;
-    margin: 0 0.2rem 0.5rem;
     border: solid 0.05rem black;
     position: relative;
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: calc(20% - 0.5rem);
+    flex-basis: calc(9% - 0.2rem);
     height: 2.2rem;
     color: black;
-    border: 2px solid rgb(4, 166, 4);
+    border: 2px solid rgb(12, 133, 12);
 }
 
 .not-in-stock {
@@ -54,13 +54,12 @@
     cursor: disabled;
     background: white;
     border-radius: 0.2rem;
-    margin: 0 0.2rem 0.5rem;
     border: solid 0.05rem black;
     background-color: white;
     position: relative;
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: calc(20% - 0.5rem);
+    flex-basis: calc(9% - 0.2rem);
     height: 2.2rem;
     color: black;
     border: 2px solid grey;
@@ -72,4 +71,65 @@
 
 .inStock p {
     color: green;
+}
+
+.description {
+    width: 100%;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    line-height: 1.8rem;
+}
+
+.description p:nth-child(1) {
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+}
+
+.description p:nth-child(2) {
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.description p:nth-child(3) {
+    font-family: 'Raleway';
+}
+
+.description p:nth-child(5) {
+    font-family: 'Raleway';
+    font-weight: 200;
+    color: black;
+    line-height: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .infos__container {
+        text-align: left;
+    }
+
+    .info__price {
+        justify-content: flex-start;
+    }
+
+    .sizesContainer {
+        justify-content: flex-start;
+    }
+
+    .description {
+        width: 80%;
+    }
+
+    .description p:nth-child(2) {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .description {
+        width: 60%;
+    }
 }
