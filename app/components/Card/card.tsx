@@ -1,10 +1,11 @@
 import React from 'react';
 import { FiHeart } from 'react-icons/fi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-
+import Modal from 'react-modal';
 import { ProductCardProps } from '../../@types/types.interface';
 
 import styles from './card.module.css';
+import Link from 'next/link';
 
 export const Card = ({
     addFavourites,
@@ -14,7 +15,18 @@ export const Card = ({
     featuredMedia,
     title,
     price,
+    handle,
 }: ProductCardProps) => {
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
         <>
             <section>
@@ -22,7 +34,7 @@ export const Card = ({
                     <div className={styles.imgContainer}>
                         <div
                             onClick={() => addToCart({ objectID, price, title, featuredMedia })}
-                            className={styles.heartIcon}
+                            className={styles.shoppingCartIcon}
                         >
                             <AiOutlineShoppingCart />
                         </div>
@@ -41,16 +53,10 @@ export const Card = ({
                         <section className={styles.cardPrice}>
                             <h5>£{price}</h5>
                         </section>
-                        <div className={styles.sizesContainer}>
-                            {availableSizes.map((size) => (
-                                <div
-                                    className={size.inStock ? `${styles['inStock']}` : `${styles['not-in-stock']}`}
-                                    key={size.id}
-                                >
-                                    {size.size}
-                                </div>
-                            ))}
-                        </div>
+
+                        <Link href={`/productDP/${handle}`}>
+                            <button>View Product</button>
+                        </Link>
                     </div>
                 </section>
             </section>

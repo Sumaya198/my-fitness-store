@@ -13,7 +13,7 @@ export default function WishlistPage() {
     return (
         <>
             <div>
-                <Link href="/">Back to Home</Link>
+                <Link href="/productPage">Back to Home</Link>
             </div>
             {wishlist.map((item) => (
                 <div key={item.objectID}>

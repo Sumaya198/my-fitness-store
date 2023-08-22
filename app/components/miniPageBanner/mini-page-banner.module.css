@@ -1,0 +1,36 @@
+.container {
+    display: none;
+}
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 6rem;
+    margin-left: 7rem;
+}
+
+.bannerContent h2 {
+    font-size: 5rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.bannerContent p {
+    color: white;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        display: block;
+        background-image: linear-gradient(to bottom, rgba(89, 90, 95, 0.52), rgba(103, 93, 100, 0.73)),
+            url('https://images.pexels.com/photos/16549171/pexels-photo-16549171/free-photo-of-blue-board-of-boat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 30vh;
+        position: relative;
+    }
+}

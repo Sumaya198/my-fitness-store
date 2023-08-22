@@ -1,5 +1,7 @@
 .sidebarTitle {
-
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    color: grey;
 }
 
 .sidebarLabelsContainer {
@@ -8,7 +10,6 @@
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    
 }
 
 .sidebarLabelsContainer input {
@@ -19,6 +20,7 @@
 
 .checkmark {
     position: absolute;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
     top: 0;
     left: 0;
     height: 20px;
@@ -36,7 +38,7 @@
 }
 
 .checkmark::after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
 }
@@ -52,4 +54,15 @@
     height: 7px;
     border-radius: 50%;
     background: white;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1440px) {
 }

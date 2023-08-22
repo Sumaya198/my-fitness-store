@@ -1,14 +1,79 @@
 .sidebar {
-    margin-top: 2rem;
-    width: 15%;
-    position: absolute;
-    /* height: 100%; */
-    border-right: 2px solid #e5e5e5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: none;
 }
 
 .menuContainer {
     margin-top: 4rem;
+}
+
+.mobileSidebar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.cross {
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.cross:hover {
+    opacity: 1;
+}
+
+.cross:before,
+.cross:after {
+    position: absolute;
+    right: 35px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+.cross:before {
+    transform: rotate(45deg);
+}
+.cross:after {
+    transform: rotate(-45deg);
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #6e6d70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5),
+        0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    color: #dfdedf;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+    .mobileSidebar {
+        display: none;
+    }
+    .sidebar {
+        margin-top: 2rem;
+        width: 17%;
+        position: absolute;
+        height: 100%;
+        border-right: 2px solid #f2efef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: block;
+        margin-left: 3rem;
+    }
 }

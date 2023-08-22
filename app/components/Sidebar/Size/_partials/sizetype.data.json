@@ -1,0 +1,26 @@
+[
+  {
+    "value": "xs",
+    "title": "XS"
+  },
+  {
+    "value": "s",
+    "title": "S"
+  },
+  {
+    "value": "m",
+    "title": "M"
+  },
+  {
+    "value": "l",
+    "title": "L"
+  },
+  {
+    "value": "xl",
+    "title": "XL"
+  },
+  {
+    "value": "xxl",
+    "title": "XXL"
+  }
+]

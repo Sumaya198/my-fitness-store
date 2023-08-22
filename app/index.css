@@ -1,23 +1,21 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;500;700&family=Lora&family=Montserrat:wght@500&family=Raleway:wght@100;200;500&display=swap');
+
+* {
     padding: 0;
     margin: 0;
-   box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
-    color: #8b7f7f
+    color: #8b7f7f;
 }
 
 li {
     list-style: none;
 }
 
-/* .btns {
-    padding: 10px 20px;
-    margin-right: 6px;
-    background: transparent;
-    border: none;
-    border: 0.6px solid #ccc;
-
-} */
+.ReactModal__Content {
+    height: 80vh;
+    width: 95%;
+}

@@ -1,58 +1,72 @@
 [
   {
     "value": "Black",
-    "title": "Black"
+    "title": "Black",
+    "hexColor": "#000"
   },
   {
     "value": "Navy",
-    "title": "Navy"
+    "title": "Navy",
+    "hexColor": "#000080"
   },
   {
     "value": "Moonstone Blue",
-    "title": "Moonstone Blue"
+    "title": "Moonstone Blue",
+    "hexColor": "#73a9c2"
   },
   {
     "value": "White",
-    "title": "White"
+    "title": "White",
+    "hexColor": "#ffff"
   },
   {
     "value": "Yellow",
-    "title": "Yellow"
+    "title": "Yellow",
+    "hexColor": "#FFFF00"
   },
   {
     "value": "Orange",
-    "title": "Orange"
+    "title": "Orange",
+    "hexColor": "#FFA500"
   },
   {
     "value": "Green",
-    "title": "Green"
+    "title": "Green",
+    "hexColor": "#008000"
   },
   {
     "value": "Teal",
-    "title": "Teal"
+    "title": "Teal",
+    "hexColor": "#008080"
   },
   {
     "value": "Grey",
-    "title": "Grey"
+    "title": "Grey",
+    "hexColor": "#808080"
   },
   {
     "value": "Paige Pink",
-    "title": "Pink"
+    "title": "Pink",
+    "hexColor": "#FFC0CB"
   },
   {
     "value": "Biscotti Brown",
-    "title": "Brown"
+    "title": "Brown",
+    "hexColor": "#dac7ab"
   },
   {
     "value": "Burgundy Marl",
-    "title": "Burgundy"
+    "title": "Burgundy",
+    "hexColor": "#800020"
   },
   {
     "value": "Pink/Red",
-    "title": "Red"
+    "title": "Red",
+    "hexColor": "#FF0000"
   },
   {
     "value": "Purple",
-    "title": "Purple"
+    "title": "Purple",
+    "hexColor": "#800080"
   }
 ]

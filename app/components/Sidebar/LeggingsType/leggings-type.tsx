@@ -7,8 +7,8 @@ import styles from './leggings-type.module.css';
 export const LeggingsType = ({ handleChangePriceRadio }: LeggingTypeProps) => {
     return (
         <div>
-            <h2 className={styles.sidebarTitle}>Leggings Collection</h2>
-            <div>
+            <h2 className={styles.sidebarTitle}>Collections</h2>
+            <div className={styles.container}>
                 {LeggingTypeData.map((leggings) => (
                     <label key={leggings.title} className={styles.sidebarLabelsContainer}>
                         <input
@@ -18,7 +18,7 @@ export const LeggingsType = ({ handleChangePriceRadio }: LeggingTypeProps) => {
                             name="typeFilter"
                         />
                         <span className={styles.checkmark}></span>
-                        {leggings.title}
+                        <p className={styles.title}>{leggings.title}</p>
                     </label>
                 ))}
             </div>

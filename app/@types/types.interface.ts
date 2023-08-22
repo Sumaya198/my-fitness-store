@@ -7,6 +7,7 @@ export interface ProductCardProps {
     featuredMedia: Media;
     title: string;
     price: number;
+    handle: string;
 }
 
 export interface Size {
