@@ -19,17 +19,13 @@ const customStyles = {
 };
 
 export const Sidebar = ({ handleChangeSizeRadio, handleChangePriceRadio, handleChangeRadio }) => {
-    let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     function openModal() {
         setIsOpen(true);
     }
 
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    }
+    function afterOpenModal() {}
 
     function closeModal() {
         setIsOpen(false);
@@ -42,6 +38,7 @@ export const Sidebar = ({ handleChangeSizeRadio, handleChangePriceRadio, handleC
                     Filters
                 </button>
                 <Modal
+                    ariaHideApp={false}
                     isOpen={modalIsOpen}
                     onAfterOpen={afterOpenModal}
                     onRequestClose={closeModal}

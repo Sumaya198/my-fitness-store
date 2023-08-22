@@ -8,7 +8,7 @@ export const SizeFilter = ({ handleChangeSizeRadio }) => {
             <h2 className={styles.sidebarTitle}>Size Filter</h2>
             <div className={styles.container}>
                 {SizeTypeData.map((size) => (
-                    <label className={styles.sidebarLabelsContainer}>
+                    <label key={size.title} className={styles.sidebarLabelsContainer}>
                         <input onChange={handleChangeSizeRadio} value={size.value} type="radio" name="sizeFilter" />
                         <span className={styles.checkmark}></span>
                         <p className={styles.title}>{size.title}</p>

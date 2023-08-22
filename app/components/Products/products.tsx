@@ -40,7 +40,7 @@ export const Products = ({ results }) => {
                         </a>
                     </li>
                     {numbers.map((n, i) => (
-                        <li>
+                        <li key={i}>
                             <a
                                 className={currentPage === n ? `${styles.number} ${styles.active}` : `${styles.number}`}
                                 onClick={() => changeCPage(n)}
