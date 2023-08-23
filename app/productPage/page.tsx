@@ -12,14 +12,13 @@ import { MiniPageBanner } from '../components/miniPageBanner/mini-page-banner';
 export default function ProductPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
+    const [query, setQuery] = useState('');
     const [favourites, setFavourites] = useState([]);
     const [cart, setCart] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState({
         filterType: null,
         filterValue: '',
     });
-
-    const [query, setQuery] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {

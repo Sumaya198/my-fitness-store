@@ -55,6 +55,9 @@ export const Sidebar = ({ handleChangeSizeRadio, handleChangePriceRadio, handleC
                     <SizeFilter handleChangeSizeRadio={handleChangeSizeRadio} />
                 </Modal>
             </div>
+            <button className={styles['clear-button']} onClick={() => window.location.reload()}>
+                Clear
+            </button>
             <div className={styles.sidebar}>
                 <Colours handleChangeRadio={handleChangeRadio} />
                 <LeggingsType handleChangePriceRadio={handleChangePriceRadio} />
