@@ -4,12 +4,13 @@
 }
 
 .infos__container {
+    margin: 0 0.625rem 0 0.625rem;
     text-align: center;
 }
 
 .info__name {
-    font-size: 35px;
-    width: 60%;
+    font-size: 30px;
+    width: 95%;
     color: #000;
     font-family: 'Montserrat';
     text-transform: uppercase;
@@ -77,7 +78,7 @@
 }
 
 .description p:nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     line-height: 2rem;
@@ -101,6 +102,10 @@
         text-align: left;
     }
 
+    .info__name {
+        width: 70%;
+    }
+
     .info__price {
         justify-content: flex-start;
     }
@@ -119,7 +124,19 @@
 }
 
 @media screen and (min-width: 1440px) {
+    .infos__container {
+        margin: 0;
+    }
+
+    .info__name {
+        width: 60%;
+    }
+
     .description {
         width: 60%;
+    }
+
+    .description p:nth-child(2) {
+        font-size: 1.5rem;
     }
 }
