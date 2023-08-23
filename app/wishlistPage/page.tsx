@@ -7,7 +7,6 @@ import styles from '../components/Card/card.module.css';
 
 export default function WishlistPage() {
     const wishlist = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('myWishlist')) : '';
-    console.log('hh', wishlist);
 
     const [data, setData] = useState([]);
 

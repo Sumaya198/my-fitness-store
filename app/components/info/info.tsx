@@ -8,6 +8,7 @@ export const ProductInfo = ({ item }) => {
             <div className={styles['infos__container']}>
                 <h1 className={styles['info__name']}>{item.title}</h1>
                 <h3 className={styles['info__price']}>£{item.price}</h3>
+                <h3 className={styles['avaiable_size_text']}>available in the following sizes:</h3>
                 <div className={styles.sizesContainer}>
                     {item.availableSizes.map((size) => (
                         <div

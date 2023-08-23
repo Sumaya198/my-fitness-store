@@ -13,6 +13,7 @@ export default function CartPage() {
     useEffect(() => {
         setData(wishlist);
     }, []);
+
     if (wishlist === null) return <>cart is empty</>;
 
     return (

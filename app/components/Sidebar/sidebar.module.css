@@ -13,10 +13,10 @@
 }
 
 .cross {
-    right: 32px;
-    top: 32px;
-    width: 32px;
-    height: 32px;
+    right: 2rem;
+    top: 2rem;
+    width: 2rem;
+    height: 2rem;
     opacity: 0.3;
     cursor: pointer;
 }
@@ -28,15 +28,17 @@
 .cross:before,
 .cross:after {
     position: absolute;
-    right: 35px;
+    right: 2.188rem;
     content: ' ';
-    height: 33px;
-    width: 2px;
+    height: 2.063rem;
+    width: 0.125rem;
     background-color: #333;
 }
+
 .cross:before {
     transform: rotate(45deg);
 }
+
 .cross:after {
     transform: rotate(-45deg);
 }
@@ -57,13 +59,11 @@
     touch-action: manipulation;
 }
 
-@media screen and (min-width: 768px) {
-}
-
 @media screen and (min-width: 1440px) {
     .mobileSidebar {
         display: none;
     }
+
     .sidebar {
         margin-top: 2rem;
         width: 17%;

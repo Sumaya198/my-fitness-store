@@ -3,46 +3,53 @@
     display: flex;
     flex-direction: column;
 }
-@media (min-width: 500px) {
-    .swiper {
-        gap: 10px;
-        width: 100%;
-    }
-}
-@media (min-width: 800px) {
-    .swiper {
-        flex-direction: column;
-        width: 80%;
-    }
-}
-@media (min-width: 1200px) {
-    .swiper {
-        flex-direction: column;
-    }
-}
+
 .swiper__list {
     overflow-x: scroll;
-    margin-top: 7px;
+    margin-top: 0.438rem;
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     overflow-y: hidden;
-    max-width: 500px;
+    max-width: 31.25rem;
 }
+
 .swiper__list img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.swiper__active {
+    z-index: 99;
+}
+
+.active {
+    outline: 1px solid #000;
+    outline-offset: 3px;
+}
+
 @media (min-width: 500px) {
+    .swiper {
+        gap: 10px;
+        width: 100%;
+    }
+
     .swiper__list {
         margin-top: 0;
         height: 100%;
     }
+
     .swiper__list img {
         width: 100px;
     }
 }
+
 @media (min-width: 800px) {
+    .swiper {
+        flex-direction: column;
+        width: 80%;
+    }
+
     .swiper__list {
         flex-direction: row;
         gap: 10px;
@@ -55,18 +62,16 @@
         object-fit: cover;
     }
 }
+
 @media (min-width: 1200px) {
+    .swiper {
+        flex-direction: column;
+    }
+
     .swiper__list {
         max-width: 1000px;
     }
     .swiper__list img {
         width: 100%;
     }
-}
-.swiper__active {
-    z-index: 99;
-}
-.active {
-    outline: 1px solid #000;
-    outline-offset: 3px;
 }

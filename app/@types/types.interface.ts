@@ -1,8 +1,7 @@
 export interface ProductCardProps {
     objectID: string;
-    //think about these two types
-    addFavourites: any;
-    addToCart: any;
+    addFavourites: (p: object) => void;
+    addToCart: (p: object) => void;
     availableSizes: Size[];
     featuredMedia: Media;
     title: string;
@@ -33,7 +32,7 @@ export interface Media {
 }
 
 export interface Navigationprops {
-    handleChange: any;
+    handleChange: (p: object) => void;
     query: string;
 }
 

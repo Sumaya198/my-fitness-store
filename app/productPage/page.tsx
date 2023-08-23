@@ -8,7 +8,6 @@ import { Products } from '../components/Products/products';
 import { Sidebar } from '../components/Sidebar/sidebar';
 import { Card } from '../components/Card/card';
 import { MiniPageBanner } from '../components/miniPageBanner/mini-page-banner';
-import Loading from '../components/loading/loading';
 
 export default function ProductPage() {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +20,6 @@ export default function ProductPage() {
     });
 
     const [query, setQuery] = useState('');
-    // Input filter
 
     useEffect(() => {
         const fetchData = async () => {
@@ -39,7 +37,6 @@ export default function ProductPage() {
         fetchData();
     }, []);
 
-    //search bar
     const handleChange = (event) => {
         setQuery(event.target.value);
     };
@@ -47,8 +44,6 @@ export default function ProductPage() {
     const filteredItems = data.filter(
         (product) => product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1,
     );
-
-    // Radio Filters colour
 
     const handleChangeRadio = (event) => {
         setSelectedCategory({
@@ -73,17 +68,13 @@ export default function ProductPage() {
 
     function filteredData(data, selected, query) {
         let filteredProducts = data;
-        //Filtering Input Items
         if (query) {
             filteredProducts = filteredItems;
         }
 
-        // filter for colour
         if (selected.filterType === 'colourFilter') {
             filteredProducts = filteredProducts.filter(({ colour }) => colour === selected.filterValue);
         }
-
-        // filter for colour
 
         if (selected.filterType === 'sizeFilter') {
             filteredProducts = filteredProducts.filter(({ sizeInStock }) =>
@@ -91,7 +82,6 @@ export default function ProductPage() {
             );
         }
 
-        // filter for type
         if (selected.filterType === 'typeFilter') {
             filteredProducts = filteredProducts.filter(({ title }) => title === selected.filterValue);
         }
@@ -99,7 +89,6 @@ export default function ProductPage() {
         const addFavourites = (wishlist) => {
             if (!favourites.includes(wishlist)) {
                 setFavourites([...favourites, wishlist]);
-                console.log('favouries', [...favourites, wishlist]);
                 if (typeof window !== 'undefined' && window.localStorage) {
                     localStorage.setItem('myWishlist', JSON.stringify([...favourites, wishlist]));
                 }
@@ -138,7 +127,8 @@ export default function ProductPage() {
     }
 
     const results = filteredData(data, selectedCategory, query);
-    if (isLoading) return <Loading />;
+
+    if (isLoading) return <p>Loading...</p>;
     return (
         <div>
             <Navigation query={query} handleChange={handleChange} />
