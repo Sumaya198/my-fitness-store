@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import styles from '../components/Card/card.module.css';
@@ -8,6 +8,12 @@ import styles from '../components/Card/card.module.css';
 export default function WishlistPage() {
     const wishlist = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('myWishlist')) : '';
     console.log('hh', wishlist);
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setData(wishlist);
+    }, []);
 
     if (wishlist === null) return <>cart is empty</>;
 
@@ -17,7 +23,7 @@ export default function WishlistPage() {
                 <Link href="/productPage">Back to Home</Link>
             </div>
             <div className={styles.wishlistContainer}>
-                {wishlist.map((item) => (
+                {data.map((item) => (
                     <section key={item.objectID} className={styles.wishlistCard}>
                         <div className={styles.imgContainer}>
                             <img className={styles.media} src={item.featuredMedia.src} />

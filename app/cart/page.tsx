@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styles from '../components/Card/card.module.css';
 import Link from 'next/link';
@@ -8,6 +8,11 @@ import Link from 'next/link';
 export default function CartPage() {
     const wishlist = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('myWishlist')) : '';
 
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setData(wishlist);
+    }, []);
     if (wishlist === null) return <>cart is empty</>;
 
     return (
@@ -16,7 +21,7 @@ export default function CartPage() {
                 <Link href="/productPage">Back to Home</Link>
             </div>
             <div className={styles.wishlistContainer}>
-                {wishlist.map((item) => (
+                {data.map((item) => (
                     <section key={item.objectID} className={styles.wishlistCard}>
                         <div key={item.objectID}>
                             <img className={styles.media} src={item.featuredMedia.src} />
