@@ -6,7 +6,7 @@ import styles from '../components/Card/card.module.css';
 import Link from 'next/link';
 
 export default function CartPage() {
-    const wishlist = JSON.parse(localStorage.getItem('myCart'));
+    const wishlist = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('myWishlist')) : '';
 
     if (wishlist === null) return <>cart is empty</>;
 

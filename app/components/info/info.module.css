@@ -9,6 +9,8 @@
 
 .info__name {
     font-size: 35px;
+    width: 60%;
+    color: #000;
     font-family: 'Montserrat';
     text-transform: uppercase;
 }

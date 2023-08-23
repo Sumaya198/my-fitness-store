@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 
 import styles from '../components/Card/card.module.css';
 
 export default function WishlistPage() {
-    const wishlist = JSON.parse(localStorage.getItem('myWishlist'));
+    const wishlist = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('myWishlist')) : '';
+    console.log('hh', wishlist);
 
     if (wishlist === null) return <>cart is empty</>;
 

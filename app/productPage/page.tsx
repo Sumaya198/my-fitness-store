@@ -100,8 +100,9 @@ export default function ProductPage() {
             if (!favourites.includes(wishlist)) {
                 setFavourites([...favourites, wishlist]);
                 console.log('favouries', [...favourites, wishlist]);
-
-                localStorage.setItem('myWishlist', JSON.stringify([...favourites, wishlist]));
+                if (typeof window !== 'undefined' && window.localStorage) {
+                    localStorage.setItem('myWishlist', JSON.stringify([...favourites, wishlist]));
+                }
 
                 toast.success('Item added to wishlist.');
             } else {
@@ -112,7 +113,6 @@ export default function ProductPage() {
         const addToCart = (cartList) => {
             if (!cart.includes(cartList)) {
                 setCart([...cart, cartList]);
-                console.log('favouries', [...cart, cartList]);
 
                 localStorage.setItem('myCart', JSON.stringify([...cart, cartList]));
 
@@ -120,7 +120,6 @@ export default function ProductPage() {
             } else {
                 setCart([...cart.filter((item) => item !== cartList)]);
             }
-            console.log('wishlist', cartList);
         };
 
         return filteredProducts?.map(({ id, handle, objectID, title, featuredMedia, availableSizes, price }) => (

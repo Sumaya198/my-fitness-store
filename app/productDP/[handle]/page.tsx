@@ -1,5 +1,4 @@
 import { PDP } from '../../components/pdp/pdp';
-import { useEffect, useState } from 'react';
 
 interface ProductPageProps {
     params: {
